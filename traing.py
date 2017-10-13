@@ -131,9 +131,9 @@ from MKPicSet import PicSet as PS
 
 MP = PS()
 MP.AddDir('./TraingData/')
-NumberOfOneTraing = 100
+NumberOfOneTraing = 100 #每單次訓練的使用的圖象數量
 
-for i in range(101):
+for i in range(101): #訓練次數
     batch_xs, batch_ys = MP.batch(NumberOfOneTraing)
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
     if i % 10 == 0:
